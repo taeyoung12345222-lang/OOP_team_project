@@ -1,5 +1,5 @@
 public abstract class User implements InputOutputService {
-    
+
     private String name;
     private String gender;
     private int age;
@@ -11,16 +11,15 @@ public abstract class User implements InputOutputService {
     private int exercisetime;
     private String balance;
 
-    private double BMR; 
+    private double BMR;
     private double TDEE;
     private double targetCalories;
     private double carbG;
     private double proteinG;
     private double fatG;
 
-
-    public void setUserData(String name, String gender, int age, double height, double weight, 
-                           double skeletalmuscle, double bodyfat, int exercisecount, int exercisetime, String balance) {
+    public User(String name, String gender, int age, double height, double weight,
+                double skeletalmuscle, double bodyfat, int exercisecount, int exercisetime, String balance) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -59,13 +58,28 @@ public abstract class User implements InputOutputService {
         return (this.bodyfat / this.weight) * 100;
     }
 
+    public double SMI() {
+        double heightM = this.height / 100.0;
+        return this.skeletalmuscle / (heightM * heightM);
+    }
+
+    protected void setCarbProteinFat(double carbR, double proteinR, double fatR) {
+        this.setCarbG((this.targetCalories * carbR) / 4);
+        this.setProteinG((this.targetCalories * proteinR) / 4);
+        this.setFatG((this.targetCalories * fatR) / 9);
+    }
+
 //Getter and Setter 부분
     public String getName() { return name; }
     public String getGender() { return gender; }
     public int getAge() { return age; }
     public double getHeight() { return height; }
     public double getWeight() { return weight; }
+    public double getSkeletalmuscle() { return skeletalmuscle; }
+    public double getBodyfat() { return bodyfat; }
     public int getExercisecount() { return exercisecount; }
+    public int getExercisetime() { return exercisetime; }
+    public String getBalance() { return balance; }
     public double getTDEE() { return TDEE; }
     
     public double getTargetCalories() { return targetCalories; }

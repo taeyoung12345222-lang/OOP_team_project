@@ -39,8 +39,9 @@ public class Input {
         System.out.print("1회 운동 시간을 입력하세요 (30 / 60): ");
         int exercisetime = sc.nextInt();
 
+        sc.nextLine(); // exercisetime 입력 후 남은 개행 제거
         System.out.print("상/하체 밸런스를 입력하세요 (상체 우세 / 하체 우세): ");
-        String balance = sc.next();
+        String balance = sc.nextLine().trim();
 
         System.out.println("=========================================");
         System.out.println("         모든 정보 입력이 완료되었습니다!        ");
