@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Input {
     private Scanner sc;
 
-    public Input() {
-        this.sc = new Scanner(System.in);
+    public Input(Scanner sc) {
+        this.sc = sc;
     }
 
     public User getUserInput() {
@@ -40,7 +40,7 @@ public class Input {
         int exercisetime = sc.nextInt();
 
         sc.nextLine(); // exercisetime 입력 후 남은 개행 제거
-        System.out.print("상/하체 밸런스를 입력하세요 (상체 우세 / 하체 우세): ");
+        System.out.print("상/하체 밸런스를 입력하세요 (상체 우세 / 하체 우세 / 균형): ");
         String balance = sc.nextLine().trim();
 
         System.out.println("=========================================");

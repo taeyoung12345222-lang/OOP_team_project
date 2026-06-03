@@ -1,0 +1,146 @@
+@startuml OOP_TeamProject
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 13
+skinparam ArrowColor #444444
+skinparam ClassBorderColor #444444
+
+' ─────────────── Interface ───────────────
+interface InputOutputService {
+    + targetplan()
+    + finalreport()
+    + showDiet()
+    + showRoutine()
+}
+
+' ─────────────── Abstract: User ───────────────
+abstract class User implements InputOutputService {
+    - name : String
+    - gender : String
+    - age : int
+    - height : double
+    - weight : double
+    - skeletalmuscle : double
+    - bodyfat : double
+    - exercisecount : int
+    - exercisetime : int
+    - balance : String
+    - BMR : double
+    - TDEE : double
+    - targetCalories : double
+    - carbG : double
+    - proteinG : double
+    - fatG : double
+    --
+    + calculateBMR()
+    + calculateTDEE()
+    + BodyFatpercent() : double
+    + SMI() : double
+    # setCarbProteinFat(carbR, proteinR, fatR)
+    # printFoodGuide()
+    + {abstract} targetplan()
+    + {abstract} finalreport()
+    + {abstract} showDiet()
+    + {abstract} showRoutine()
+}
+
+' ─────────────── Concrete: User 자식 ───────────────
+class MaleUser extends User {
+    + targetplan()
+    + finalreport()
+    + showDiet()
+    + showRoutine()
+}
+
+class FemaleUser extends User {
+    + targetplan()
+    + finalreport()
+    + showDiet()
+    + showRoutine()
+}
+
+' ─────────────── Abstract: ExerciseRoutine ───────────────
+abstract class ExerciseRoutine {
+    # user : User
+    --
+    + {abstract} buildBaseRoutine()
+}
+
+abstract class MaleRoutine extends ExerciseRoutine {
+    # highFat : boolean
+    # lowFat : boolean
+    --
+    + {abstract} buildBaseRoutine()
+}
+
+abstract class FemaleRoutine extends ExerciseRoutine {
+    # highFat : boolean
+    # lowFat : boolean
+    --
+    + {abstract} buildBaseRoutine()
+}
+
+' ─────────────── Concrete: Routine 자식 ───────────────
+class Male2DayRoutine extends MaleRoutine {
+    + buildBaseRoutine()
+}
+
+class Male3DayRoutine extends MaleRoutine {
+    + buildBaseRoutine()
+}
+
+class Male4DayRoutine extends MaleRoutine {
+    + buildBaseRoutine()
+}
+
+class Female2DayRoutine extends FemaleRoutine {
+    + buildBaseRoutine()
+}
+
+class Female3DayRoutine extends FemaleRoutine {
+    + buildBaseRoutine()
+}
+
+class Female4DayRoutine extends FemaleRoutine {
+    + buildBaseRoutine()
+}
+
+' ─────────────── 보조 클래스 ───────────────
+class Userfactory {
+    + {static} createUser(...) : User
+}
+
+class Input {
+    - sc : Scanner
+    --
+    + getUserInput() : User
+}
+
+class Main {
+    + {static} main(args : String[])
+}
+
+class MemberInfoRequiredException extends Exception {
+    + MemberInfoRequiredException()
+}
+
+' ─────────────── 의존 관계 ───────────────
+MaleUser ..> Male2DayRoutine : <<create>>
+MaleUser ..> Male3DayRoutine : <<create>>
+MaleUser ..> Male4DayRoutine : <<create>>
+
+FemaleUser ..> Female2DayRoutine : <<create>>
+FemaleUser ..> Female3DayRoutine : <<create>>
+FemaleUser ..> Female4DayRoutine : <<create>>
+
+ExerciseRoutine o-- User : user
+
+Userfactory ..> MaleUser : <<create>>
+Userfactory ..> FemaleUser : <<create>>
+
+Input ..> Userfactory : <<use>>
+Main ..> Input : <<use>>
+Main ..> User : <<use>>
+Main ..> MemberInfoRequiredException : <<catch>>
+
+@enduml

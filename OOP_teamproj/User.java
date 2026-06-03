@@ -94,9 +94,21 @@ public abstract class User implements InputOutputService {
     public double getFatG() { return fatG; }
     public void setFatG(double fatG) { this.fatG = fatG; }
 
+    protected void printFoodGuide() {
+        System.out.println("\n=== 식품 환산 예시 ===");
+        System.out.printf("공기밥          약 %.1f공기 분량의 탄수화물%n", getCarbG() / 70.0);
+        System.out.printf("편의점 닭가슴살  약 %.1f개 분량의 단백질%n",    getProteinG() / 20.0);
+    }
+
     @Override
     public abstract void targetplan();
-    
+
     @Override
     public abstract void finalreport();
+
+    @Override
+    public abstract void showDiet();
+
+    @Override
+    public abstract void showRoutine();
 }

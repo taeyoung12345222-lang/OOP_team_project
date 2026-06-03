@@ -1,5 +1,5 @@
 public class Userfactory {
-    public static User createUser(String name, String gender, int age, double height, double weight, 
+    public static User createUser(String name, String gender, int age, double height, double weight,
                                   double skeletalmuscle, double bodyfat, int exercisecount, int exercisetime, String balance) {
         if (gender.equals("남성")) {
             return new MaleUser(name, age, height, weight, skeletalmuscle, bodyfat, exercisecount, exercisetime, balance);

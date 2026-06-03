@@ -33,16 +33,29 @@ public class FemaleUser extends User {
 
     @Override
     public void finalreport() {
+        showDiet();
+        System.out.println();
+        showRoutine();
+    }
+
+    @Override
+    public void showDiet() {
         System.out.println("=========================================");
-        System.out.println("            여성 결과 리포트               ");
+        System.out.println("            여성 식단 추천                 ");
         System.out.println("=========================================");
         System.out.println("체지방률: " + String.format("%.1f", this.BodyFatpercent()) + "%");
         System.out.println("목표 칼로리: " + String.format("%.0f", this.getTargetCalories()) + " kcal");
         System.out.println("탄수화물: " + String.format("%.1f", this.getCarbG()) + "g");
         System.out.println("단백질: " + String.format("%.1f", this.getProteinG()) + "g");
         System.out.println("지방: " + String.format("%.1f", this.getFatG()) + "g");
+        printFoodGuide();
+    }
 
-        System.out.println("\n=== 운동 루틴 ===");
+    @Override
+    public void showRoutine() {
+        System.out.println("=========================================");
+        System.out.println("            여성 운동 루틴 추천              ");
+        System.out.println("=========================================");
 
         ExerciseRoutine routine;
         if (this.getExercisecount() == 2)       routine = new Female2DayRoutine(this);
