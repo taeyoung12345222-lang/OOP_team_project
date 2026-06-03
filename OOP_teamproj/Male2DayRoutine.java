@@ -6,9 +6,89 @@ public class Male2DayRoutine extends MaleRoutine {
 
     @Override
     public void buildBaseRoutine() {
-        int time = user.getExercisetime();
+
         String balance = user.getBalance();
-        // 팀원 루틴 내용 채워주세요
-        System.out.println("[남성 주 2회 루틴] time=" + time + ", balance=" + balance + ", highFat=" + highFat + ", lowFat=" + lowFat);
+
+        if (highFat) {
+
+            if (balance.equals("상체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(3세트), 체스트프레스(3세트), 숄더프레스(3세트), 사이드 레터럴 레이즈(3세트), 유산소 30~60분");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(5세트), 레그프레스(5세트), 랫풀다운(3세트), 시티드로우(3세트), 케이블 푸시다운(3세트), 유산소 30~60분");
+
+            } else if (balance.equals("하체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(5세트), 체스트프레스(5세트), 숄더프레스(5세트), 사이드 레터럴 레이즈(5세트), 유산소 30~60분");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(3세트), 레그프레스(3세트), 랫풀다운(5세트), 시티드로우(5세트), 케이블 푸시다운(5세트), 유산소 30~60분");
+
+            } else {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(4세트), 체스트프레스(4세트), 숄더프레스(4세트), 사이드 레터럴 레이즈(4세트), 유산소 30~60분");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(4세트), 레그프레스(4세트), 랫풀다운(4세트), 시티드로우(4세트), 케이블 푸시다운(4세트), 유산소 30~60분");
+            }
+
+        } else if (lowFat) {
+
+            if (balance.equals("상체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(4세트), 체스트프레스(4세트), 숄더프레스(4세트), 사이드 레터럴 레이즈(4세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(5세트), 레그프레스(5세트), 랫풀다운(4세트), 시티드로우(4세트), 케이블 푸시다운(4세트)");
+
+            } else if (balance.equals("하체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(5세트), 체스트프레스(5세트), 숄더프레스(5세트), 사이드 레터럴 레이즈(5세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(4세트), 레그프레스(4세트), 랫풀다운(5세트), 시티드로우(5세트), 케이블 푸시다운(5세트)");
+
+            } else {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(4세트), 체스트프레스(4세트), 숄더프레스(4세트), 사이드 레터럴 레이즈(4세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(4세트), 레그프레스(4세트), 랫풀다운(4세트), 시티드로우(4세트), 케이블 푸시다운(4세트)");
+            }
+
+        } else {
+
+            if (balance.equals("상체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(3세트), 체스트프레스(3세트), 숄더프레스(3세트), 사이드 레터럴 레이즈(3세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(5세트), 레그프레스(5세트), 랫풀다운(3세트), 시티드로우(3세트), 케이블 푸시다운(3세트)");
+
+            } else if (balance.equals("하체 우세")) {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(5세트), 체스트프레스(5세트), 숄더프레스(5세트), 사이드 레터럴 레이즈(5세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(3세트), 레그프레스(3세트), 랫풀다운(5세트), 시티드로우(5세트), 케이블 푸시다운(5세트)");
+
+            } else {
+
+                System.out.println(
+                        "1일차 : 벤치프레스(4세트), 체스트프레스(4세트), 숄더프레스(4세트), 사이드 레터럴 레이즈(4세트)");
+
+                System.out.println(
+                        "2일차 : 스쿼트 머신(4세트), 레그프레스(4세트), 랫풀다운(4세트), 시티드로우(4세트), 케이블 푸시다운(4세트)");
+            }
+        }
     }
 }
