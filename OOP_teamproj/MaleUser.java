@@ -23,13 +23,6 @@ public class MaleUser extends User {
     }
 
     @Override
-    public void finalreport() {
-        showDiet();
-        System.out.println();
-        showRoutine();
-    }
-
-    @Override
     public void showDiet() {
         System.out.println("=========================================");
         System.out.println("            남성 식단 추천                 ");

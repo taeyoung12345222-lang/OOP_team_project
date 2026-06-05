@@ -104,9 +104,6 @@ public abstract class User implements InputOutputService {
     public abstract void targetplan();
 
     @Override
-    public abstract void finalreport();
-
-    @Override
     public abstract void showDiet();
 
     @Override

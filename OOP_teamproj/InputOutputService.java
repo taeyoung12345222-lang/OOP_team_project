@@ -1,6 +1,5 @@
 public interface InputOutputService {
     void targetplan();
-    void finalreport();
     void showDiet();
     void showRoutine();
 }

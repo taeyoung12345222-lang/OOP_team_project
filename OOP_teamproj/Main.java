@@ -42,9 +42,9 @@ public class Main {
                     user.calculateBMR();
                     user.calculateTDEE();
                     user.targetplan();
-                    System.out.println("회원 정보가 저장되었습니다. (" + user.getName() + " / " + user.getGender() + ")");
+                    System.out.println("회원 정보가 저장되었습니다. (" + user.getName() + " / " + user.getGender() + " / " + user.getAge() + "세)");
                 } else {
-                    System.out.println("[오류] 유저 생성 실패. 성별을 '남성' 또는 '여성'으로 정확히 입력하세요.");
+                    System.out.println("[오류] 유저 생성 실패");
                 }
             } else {
                 System.out.println("올바른 번호(0~3)를 입력해주세요.");

@@ -180,7 +180,5 @@ public class Male4DayRoutine extends MaleRoutine {
     }
 }
 
-        }
-
     }
 }
