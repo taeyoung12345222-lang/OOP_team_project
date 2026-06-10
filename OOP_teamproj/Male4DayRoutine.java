@@ -46,8 +46,8 @@ public class Male4DayRoutine extends MaleRoutine {
 
                 if (balance.equals("상체 우세")) {
 
-                    System.out.println("Day1: 벤치프레스(4세트), 체스트프레스(4세트), 펙덱 플라이(4세트), 케이블 플라이(3세트)");
-                    System.out.println("Day2: 랫풀다운(4세트), 시티드로우(4세트), 루마니안 데드리프트(4세트), 케이블 로프 풀다운(3세트)");
+                    System.out.println("Day1: 벤치프레스(4세트), 체스트프레스(4세트), 펙덱 플라이(4세트), 케이블 플라이(4세트)");
+                    System.out.println("Day2: 랫풀다운(4세트), 시티드로우(4세트), 루마니안 데드리프트(4세트), 케이블 로프 풀다운(4세트)");
                     System.out.println("Day3: 스쿼트 머신(6세트), 레그프레스(6세트), 레그 익스텐션(6세트), 레그컬(6세트)");
                     System.out.println("Day4: 숄더프레스(4세트), 사이드 레터럴 레이즈(4세트), 바벨컬(4세트), 케이블 푸시다운(4세트)");
 
